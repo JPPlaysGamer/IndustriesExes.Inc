@@ -8,6 +8,7 @@ ofstream element;
 struct ModMain //For configuration and create files .json and .hjson
 {
 	std::string Local;
+	std::string LocalDel;
 	
 	void CreateObject(string Dir, string Name, string Prefix)
 	{
@@ -20,6 +21,8 @@ struct ModMain //For configuration and create files .json and .hjson
 	
 	void CloseObject()
 	{
+		//Close file after of create.
+		
 		element.close();
 	}
 	
@@ -35,14 +38,33 @@ struct ModMain //For configuration and create files .json and .hjson
 			element << "minGameVersion: \"" << minGameVersion << "\"" << endl;
 		}	
 	}
+	
+	void DeleteElement(string Directory, string Name, string Prefix)
+	{
+		if(!element.is_open())
+		{
+			LocalDel="del /q";
+			LocalDel=LocalDel + Directory + Name + Prefix;
+			
+			system(LocalDel.c_str());
+		}
+	}
+	
+	void ResetLocal()
+	{
+		Local="";
+		LocalDel="";
+	}
 };
 
 struct ItemElement
 {
 	
-	void ItemBasic(string ItemType, string ItemName, string ItemDescription, string ItemColor6char)
+	void ItemBasic(string ItemType, string ItemName, string ItemDescription, double ItemHardness, double ItemCost, string ItemColor6char)
 	{
-		//Basic of Item: type, name in display, description and color. The color needs 6 char <color:ffffff>
+		/*Basic of Item: type, name in display, description and color. The color needs 6 char <color:ffffff>
+		 ItemHardness and ItemCost is double <hardness: 2> <cost: 2.5>
+		 For default: 0*/
 		
 		
 		if(element.is_open())
@@ -50,21 +72,13 @@ struct ItemElement
 			element << "type: " << ItemType << endl;
 			element << "name: " << ItemName << endl;
 			element << "description: " << ItemDescription << endl;
+			element << "hardness: " << ItemHardness << endl;
+			element << "cost: " << ItemCost << endl;
 			element << "color: " << ItemColor6char << endl;
 		
 		}
 		
 	}
 	
-	void ItemExtra(double ItemCost, double ItemHardness)
-	{
-		//Advanced of item.
-		
-		if(element.is_open())
-		{
-			element << "cost: " << ItemCost << endl;
-			element << "hardness: " << ItemHardness << endl;
-		}
-	}
 
 };
