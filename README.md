@@ -1,7 +1,7 @@
 # IndustriesExes.Inc
 Contains all the projects e games integrations.
 
-"Grettings. My name is JPPlaysGamer, who am i talking to?
+"Greetings. My name is JPPlaysGamer, who am i talking to?
 
 You are now looking at my repository. Well, I think you’re looking for something, right?
 If not, why are you here? I'm new here, I don't know anyone and I'm not from your country.
