@@ -12,6 +12,7 @@ Or your dream was to participate in a project. You can look like a good programm
 You know, I'm not used to it, programming is something that came to me. I was born for this, and NO barrier ... 
 and how are you? I'm the same, you ... think of something, you can think that all that I say is just to enter my repository,
 nothing like that. I just talk about what we feel when we want to do something else. I do not control anyone it is something that you yourself or
-whoever looks at it must know how to make their own decision.
+whoever looks at it must know how to make their own decision."
 
-        -JPPlaysGamer"
+        -JPPlaysGamer
+        
