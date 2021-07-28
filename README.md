@@ -1,5 +1,5 @@
 # IndustriesExes.Inc
-Contains all the projects and games integrations.
+This repository is the center of IEI.
 
 "Grettings. My name is JPPlaysGamer, who am i talking to?
 
