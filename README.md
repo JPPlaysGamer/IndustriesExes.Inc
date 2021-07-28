@@ -1,5 +1,5 @@
 # IndustriesExes.Inc
-Contains all the projects e games integrations.
+Contains all the projects and games integrations.
 
 "Grettings. My name is JPPlaysGamer, who am i talking to?
 
