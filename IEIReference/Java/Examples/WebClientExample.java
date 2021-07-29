@@ -24,7 +24,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 @SuppressWarnings("serial")
-public class DownloadFileFrame extends JFrame {
+public class DownloadFileFrame extends JFrame { //JFrame Name
 
 	private JPanel contentPane;
 	private WebClient client = new WebClient(new DownloadListener() {
@@ -36,7 +36,7 @@ public class DownloadFileFrame extends JFrame {
 				JOptionPane.showMessageDialog(null, "Downloaded!");
 			}
 			else {
-				JOptionPane.showMessageDialog(null, "Downloaded!");
+				JOptionPane.showMessageDialog(null, "Error!");
 			}
 		}
 		
