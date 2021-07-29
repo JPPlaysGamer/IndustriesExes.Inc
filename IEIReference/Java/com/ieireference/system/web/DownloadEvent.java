@@ -2,11 +2,19 @@ package com.ieireference.system.web;
 
 public final class DownloadEvent {
 	
-	public boolean Completed;
-	public boolean Error;
+	boolean Completed;
+	boolean Error;
 	
-	public long BytesTotal;
-	public long BytesIn;
+	long BytesTotal;
+	long BytesIn;
 	
-	public int Percentage;
+	int Percentage;
+	
+	public boolean Completed() { return Completed;}
+	public boolean Error() { return Error;}
+	
+	public long BytesTotal() { return BytesTotal;}
+	public long BytesIn() { return BytesIn;}
+	
+	public int Percentage() { return Percentage;}
 }
