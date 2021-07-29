@@ -32,7 +32,7 @@ public class DownloadFileFrame extends JFrame { //JFrame Name
 		@Override
 		public void DownloadFileCompleted(DownloadEvent e) {
 			// TODO Auto-generated method stub
-			if(e.Completed) {
+			if(e.Completed()) {
 				JOptionPane.showMessageDialog(null, "Downloaded!");
 			}
 			else {
@@ -43,10 +43,10 @@ public class DownloadFileFrame extends JFrame { //JFrame Name
 		@Override
 		public void DownloadFileChanged(DownloadEvent e) {
 			// TODO Auto-generated method stub
-			double total = (double)e.BytesTotal / 1024 / 1024; double in = (double)e.BytesIn / 1024 / 1024;
+			double total = (double)e.BytesTotal() / 1024 / 1024; double in = (double)e.BytesIn() / 1024 / 1024;
 			
 			lblMb.setText(new DecimalFormat("#.##").format(in) + "/" + new DecimalFormat("#.##").format(total) + " MB");
-			progressBar.setValue(e.Percentage);
+			progressBar.setValue(e.Percentage());
 		}
 	});
 	private JLabel lblMb;
