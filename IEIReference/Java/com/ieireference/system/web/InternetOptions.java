@@ -1,19 +1,57 @@
 package com.ieireference.system.web;
 
 import javax.net.ssl.SSLContext;
-
+/**
+ * 
+ * Represents a class with Internet Options
+ * 
+ * */
 public final class InternetOptions {
 	
+	/**
+	 * 
+	 * A enumeration of protocols
+	 * 
+	 * */
 	public enum ProtocolType {
-		SSL,
+		/**
+		 * Some Protocol SSL
+		 * */
+		SSL, 
+		/**
+		 * Protocol SSL 2.0
+		 * */
 		SSLv2,
+		/**
+		 * Protocol SSL 3.0
+		 * */
 		SSLv3,
+		/**
+		 * Some Protocol TLS
+		 * */
 		TLS,
+		/**
+		 * Protocol TLS 1.0
+		 * */
 		TLSv1,
+		/**
+		 * Protocol TLS 1.1
+		 * */
 		TLSv11,
+		/**
+		 * Protocol TLS 1.2
+		 * */
 		TLSv12
 	}
 
+	
+	/**
+	 * 
+	 * Add protocols to the JVM.
+	 * 
+	 * @param type The type to add.
+	 * 
+	 * */
 	public static void addProtocols(ProtocolType type) {
 		String protocol = "";
 		

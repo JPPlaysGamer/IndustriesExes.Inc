@@ -10,6 +10,12 @@ import java.net.URLConnection;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 
+/**
+ * Represents a client for web. Contains functions to download file asynchronous and a thread for this. Events can be used for Java Forms like download file with JProgressBar.
+ * 
+ * @see DownloadListener
+ * @see DownloadEvent
+ * */
 public final class WebClient {
 	
 	private DownloadListener DownloadProgress;
@@ -17,11 +23,24 @@ public final class WebClient {
 	private Thread currentThread;
 	
 	public WebClient() {}
+	/**
+	 * 
+	 * Initializes and set events
+	 * 
+	 * @param progress Add the events for {@link #DownloadFileAsync(URL, String)}
+	 * */
 	public WebClient(DownloadListener progress) {
 		
 		setDownloadProgress(progress);
 	}
 	
+	/**
+	 * 
+	 * Get a file size from web.
+	 * 
+	 * @param url The URL to get the size.
+	 * @return The size.
+	 * */
 	public static long getFileSizeFromNet(URL url) {
 	    URLConnection conn = null;
 	    try {
@@ -40,6 +59,14 @@ public final class WebClient {
 	    }
 	}
 	
+	/**
+	 * 
+	 * Sets manually events.
+	 * 
+	 * @param downloadProgress Add the events for {@link #DownloadFileAsync(URL, String)}
+	 * 
+	 * @throws IllegalStateException If call this function when {@link #DownloadFileAsync(URL, String)} is running.
+	 * */
 	public void setDownloadProgress(DownloadListener downloadProgress) throws IllegalStateException{
 		
 		if(!IsThreadAlive()) {
@@ -49,7 +76,17 @@ public final class WebClient {
 		}
 	}
 	
-	public void DownloadFileAsync(URL file, String output) throws IllegalStateException, FileAlreadyExistsException{
+	/**
+	 * 
+	 * Start asynchronous download. Is needed set events before of start.
+	 * 
+	 * @param file The file to Download.
+	 * @param output The output of file download.
+	 * 
+	 * @throws IllegalStateException If you call when running or Events are null.
+	 * @throws FileAlreadyExistsException If you try call with a file existent in output
+	 * */
+	public void DownloadFileAsync(final URL file, final String output) throws IllegalStateException, FileAlreadyExistsException{
 		
 		if(new File(output).exists()) {
 			throw new FileAlreadyExistsException("The file '" + output + "' exist and can't download with this existent");
@@ -63,7 +100,6 @@ public final class WebClient {
 		
 		currentThread = new Thread(new Runnable() {
 			
-			@Override
 			public void run() {
 				DownloadEvent event = new DownloadEvent();
 				try {
@@ -96,9 +132,9 @@ public final class WebClient {
 								
 					
 				} catch (IOException e) {
-					e.printStackTrace();
 					event.Error = true;
 					DownloadProgress.DownloadFileCompleted(event);
+					e.printStackTrace();
 				}
 				
 			}
@@ -106,7 +142,17 @@ public final class WebClient {
 		currentThread.start();
 	}
 	
-	@SuppressWarnings("deprecation")
+	
+	/**
+	 * 
+	 * CAUTION. This method stop the download thread, please use if need.
+	 * 
+	 * Thread.stop() is Deprecated.
+	 * 
+	 * @throws IllegalStateException If thread is null or not alive when call this.
+	 * */
+	@Deprecated
+	//@SuppressWarnings("deprecation")
 	public void DownloadThreadStop() throws IllegalStateException{
 		if(currentThread != null) {
 			if(currentThread.isAlive()) {
@@ -117,6 +163,11 @@ public final class WebClient {
 		else throw new IllegalStateException("The Download Thread is null or not Alive");
 	}
 	
+	
+	/**
+	 * 
+	 * @return If thread not null, return true or false if alive else false.
+	 * */
 	public boolean IsThreadAlive() {
 		return (currentThread != null) ? currentThread.isAlive() : false;
 	}
