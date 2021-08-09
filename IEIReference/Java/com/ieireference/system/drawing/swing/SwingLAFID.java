@@ -12,14 +12,14 @@ import javax.swing.plaf.metal.OceanTheme;
 public final class SwingLAFID {
 
 	/**
-     * Returns the name of the <code>LookAndFeel</code> class that implements
-     * the native system look and feel if there is one, otherwise
-     * the name of the default cross platform <code>LookAndFeel</code>
-     * class. This value can be overridden by setting the
-     * <code>swing.systemlaf</code> system property.
-     *
-     *
-     */
+        * Returns the name of the <code>LookAndFeel</code> class that implements
+        * the native system look and feel if there is one, otherwise
+        * the name of the default cross platform <code>LookAndFeel</code>
+        * class. This value can be overridden by setting the
+        * <code>swing.systemlaf</code> system property.
+        *
+        *
+        */
 	public static final String System = UIManager.getSystemLookAndFeelClassName();
 	/**
 	 * Implements the Windows95/98/NT/2000 Look and Feel.
@@ -108,16 +108,16 @@ public final class SwingLAFID {
 	 * 
 	 * @param laf Use the IDs of class.
 	 * 
-     * @exception ClassNotFoundException if the <code>LookAndFeel</code>
-     *           class could not be found
-     * @exception InstantiationException if a new instance of the class
-     *          couldn't be created
-     * @exception IllegalAccessException if the class or initializer isn't accessible
-     * @exception UnsupportedLookAndFeelException if
-     *          <code>lnf.isSupportedLookAndFeel()</code> is false
-     * @throws ClassCastException if {@code className} does not identify
-     *         a class that extends {@code LookAndFeel}
-     */
+         * @exception ClassNotFoundException if the <code>LookAndFeel</code>
+         *           class could not be found
+         * @exception InstantiationException if a new instance of the class
+         *          couldn't be created
+         * @exception IllegalAccessException if the class or initializer isn't accessible
+         * @exception UnsupportedLookAndFeelException if
+         *          <code>lnf.isSupportedLookAndFeel()</code> is false
+         * @throws ClassCastException if {@code className} does not identify
+         *         a class that extends {@code LookAndFeel}
+         */
 	public static void applyLAF(String laf) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 		UIManager.setLookAndFeel(laf);
 	}
