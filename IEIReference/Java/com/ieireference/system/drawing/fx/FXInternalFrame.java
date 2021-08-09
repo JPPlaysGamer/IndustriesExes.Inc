@@ -35,15 +35,15 @@ public class FXInternalFrame extends JInternalFrame {
 	 * @param fxml The FXML to add the panel.
 	 * 
 	 * @exception ClassNotFoundException if the <code>LookAndFeel</code>
-     *           class could not be found
-     * @exception InstantiationException if a new instance of the class
-     *          couldn't be created
-     * @exception IllegalAccessException if the class or initializer isn't accessible
-     * @exception UnsupportedLookAndFeelException if
-     *          <code>lnf.isSupportedLookAndFeel()</code> is false
-     * @throws ClassCastException if {@code className} does not identify
-     *         a class that extends {@code LookAndFeel}
-     * 
+     	 *           class could not be found
+     	 * @exception InstantiationException if a new instance of the class
+     	 *          couldn't be created
+     	 * @exception IllegalAccessException if the class or initializer isn't accessible
+     	 * @exception UnsupportedLookAndFeelException if
+     	 *          <code>lnf.isSupportedLookAndFeel()</code> is false
+     	 * @throws ClassCastException if {@code className} does not identify
+     	 *         a class that extends {@code LookAndFeel}
+     	 * 
 	 * */
 	public FXInternalFrame(String LookAndFeel, URL fxml, Object controller) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 		SwingLAFID.applyLAF(LookAndFeel);
@@ -52,17 +52,17 @@ public class FXInternalFrame extends JInternalFrame {
 		
 		setContentPane(panel);
         
-        FXMLLoader loader = new FXMLLoader(fxml);
-        loader.setController(this);
-        try {
-            toPanel = loader.load();
-            loader.setController(controller);
-            panel.setScene(new Scene(toPanel));
-        } catch (IOException ex) {
-        	ex.printStackTrace();
-        }
+        	FXMLLoader loader = new FXMLLoader(fxml);
+        	loader.setController(this);
+        	try {
+            		toPanel = loader.load();
+            		loader.setController(controller);
+            		panel.setScene(new Scene(toPanel));
+        	} catch (IOException ex) {
+        		ex.printStackTrace();
+        	}
         
-        hasInitialized = true;
+        	hasInitialized = true;
 	}
 	
 	/**
