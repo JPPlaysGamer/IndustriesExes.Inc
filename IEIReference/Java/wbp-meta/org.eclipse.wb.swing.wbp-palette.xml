@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palette>
+	<category id="IEIRF" name="IEI RF System Drawing" description="Extends the WB Pallete with new components of IEIReference" open="true">
+		<component
+			class="com.ieireference.system.drawing.fx.FXInternalFrame"
+			name="FXInternalFrame" description="Adds a InternalFrame to use in JavaFX. You can use for edit and use in JavaFX, but will need use the FXDesktopPane." />
+		<component class="com.ieireference.system.drawing.fx.FXDesktopPane" name="FXDesktopPane" description="Adds a DesktopPane to use in JavaFX."/>
+	</category>
+</palette>
