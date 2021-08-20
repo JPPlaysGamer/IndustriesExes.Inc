@@ -1,5 +1,10 @@
+
 com.ieireference
 com.ieireference.system
 com.ieireference.system.drawing
+com.ieireference.system.drawing.fx
+com.ieireference.system.drawing.swing
+com.ieireference.system.event
 com.ieireference.system.io
 com.ieireference.system.web
+com.ieireference.wizards
