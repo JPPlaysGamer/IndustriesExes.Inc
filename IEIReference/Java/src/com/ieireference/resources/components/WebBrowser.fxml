@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.web.WebView?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="620.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <WebView fx:id="fxWebBrowser" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="fxMClose" mnemonicParsing="false" onAction="#Close" text="Close" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Browser">
+              <items>
+                <MenuItem fx:id="fxMNavigate" mnemonicParsing="false" onAction="#Navigate" text="Navigate to..." />
+                  <MenuItem fx:id="fxMReload" mnemonicParsing="false" onAction="#Reload" text="Reload" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="fxMAbout" mnemonicParsing="false" onAction="#About" text="About" />
+            </items>
+          </Menu>
+            <Menu fx:id="fxTMenu" mnemonicParsing="false">
+               <graphic>
+                  <TextField fx:id="fxURL" onKeyPressed="#fxURLEnter" prefHeight="25.0" prefWidth="400.0" />
+               </graphic>
+            </Menu>
+            <Menu fx:id="fxInMenu" mnemonicParsing="false">
+               <graphic>
+                  <ProgressIndicator fx:id="fxProgress" prefHeight="30.0" prefWidth="30.0" visible="false" />
+               </graphic>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</fx:root>
