@@ -1,0 +1,6 @@
+package {0};
+
+public class {1} {
+
+	//TODO add contents here
+}
