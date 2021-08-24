@@ -4,7 +4,8 @@
 		<component
 			class="com.ieireference.system.drawing.fx.FXInternalFrame"
 			name="FXInternalFrame"
-			description="Adds a InternalFrame to use in JavaFX. You can use for edit and use in JavaFX, but will need use the FXDesktopPane." />
+			description="Adds a InternalFrame to use in JavaFX. You can use for edit and use in JavaFX, but will need use the FXDesktopPane.">
+		</component>
 		<component
 			class="com.ieireference.system.drawing.fx.FXDesktopPane"
 			name="FXDesktopPane"
