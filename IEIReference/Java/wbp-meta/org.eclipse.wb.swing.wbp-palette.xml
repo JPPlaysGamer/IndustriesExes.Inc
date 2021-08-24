@@ -3,10 +3,17 @@
 	<category id="IEIRF" name="IEI RF System Drawing" description="Extends the WB Pallete with new components of IEIReference" open="true">
 		<component
 			class="com.ieireference.system.drawing.fx.FXInternalFrame"
-			name="FXInternalFrame" description="Adds a InternalFrame to use in JavaFX. You can use for edit and use in JavaFX, but will need use the FXDesktopPane." />
-		<component class="com.ieireference.system.drawing.fx.FXDesktopPane" name="FXDesktopPane" description="Adds a DesktopPane to use in JavaFX."/><component
-			class="com.ieireference.system.drawing.swing.JWebBrowser" name="JWebBrowser"
+			name="FXInternalFrame"
+			description="Adds a InternalFrame to use in JavaFX. You can use for edit and use in JavaFX, but will need use the FXDesktopPane." />
+		<component
+			class="com.ieireference.system.drawing.fx.FXDesktopPane"
+			name="FXDesktopPane"
+			description="Adds a DesktopPane to use in JavaFX.">
+		</component>
+		<component
+			class="com.ieireference.system.drawing.swing.JWebBrowser"
+			name="JWebBrowser"
 			description="Adds a JavaFX Web Browser in your frame, this Browser contains menu bar with simple controls for a browser.">
-</component>
+		</component>
 	</category>
 </palette>
